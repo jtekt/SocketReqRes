@@ -1,6 +1,6 @@
 # Socket handler
 
-NodeJS's 'net' module allows for simple RCP connection and data exchange between network devices.
+The built-in NodeJS 'net' module allows for simple RCP connection and data exchange between network devices.
 It operates in an event-driven fashion and thus all incoming data is handled in a single callback.
 
 Oftentimes, devices such as PLCs are designed to respond with data immediately upon receiving a valid message.
@@ -10,20 +10,21 @@ Nevertheless, since the 'net' module handles all responses in the same callback,
 This module attempts to solve this shortfall by adding a promise-based handling of messages and their response, similar to how Axios manages HTTP requests.
 
 ## Usage
+
 ```javascript
-const SocketHandler = require('./SocketHandler.js')
+const SocketHandler = require("./SocketHandler.js")
 
-const device = new SocketHandler({host:'192.168.1.2', port:8080})
+const device = new SocketHandler({ host: "192.168.1.2", port: 8080 })
 
-device.connect()
-.then( () => {
-  console.log(`Device connected`)
-  return device.send( 'my first message' )
-})
-.then( (response) => {
-  console.log(response)
-  return device.send( 'my second message' )
-})
-.catch(console.log)
-
+device
+  .connect()
+  .then(() => {
+    console.log(`Device connected`)
+    return device.send("my first message")
+  })
+  .then((response) => {
+    console.log(response)
+    return device.send("my second message")
+  })
+  .catch(console.log)
 ```

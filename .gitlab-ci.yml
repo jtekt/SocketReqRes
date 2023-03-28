@@ -7,6 +7,6 @@ publish:
   tags:
     - dind
   before_script:
-    - npm adduser --registry http://10.115.1.100:30873/
+    - echo "//10.115.1.100:30873/:_authToken=${VERDACCIO_TOKEN}" > ~/.npmrc
   script:
     - npm publish --registry http://10.115.1.100:30873/

@@ -1,0 +1,10 @@
+stages:
+  - publish
+
+publish:
+  stage: publish
+  image: node:16
+  tags:
+    - dind
+  script:
+    - npm publish --registry http://10.115.1.100:30873/

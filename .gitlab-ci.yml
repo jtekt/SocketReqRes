@@ -6,5 +6,7 @@ publish:
   image: node:16
   tags:
     - dind
+  before_script:
+    - npm adduser --registry http://10.115.1.100:30873/
   script:
     - npm publish --registry http://10.115.1.100:30873/

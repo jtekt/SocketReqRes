@@ -1,4 +1,4 @@
-# Socket handler
+# SocketReqRes
 
 The built-in NodeJS 'net' module allows for simple RCP connection and data exchange between network devices.
 It operates in an event-driven fashion and thus all incoming data is handled in a single callback.
@@ -12,9 +12,9 @@ This module attempts to solve this shortfall by adding a promise-based handling 
 ## Usage
 
 ```javascript
-const SocketHandler = require("./SocketHandler.js")
+const SocketReqRes = require("./SocketReqRes.js")
 
-const device = new SocketHandler({ host: "192.168.1.2", port: 8080 })
+const device = new SocketReqRes({ host: "192.168.1.2", port: 8080 })
 
 device
   .connect()

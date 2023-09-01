@@ -1,8 +1,8 @@
 {
-  "name": "socket_handler",
+  "name": "socket-req-res",
   "version": "1.0.1",
   "description": "The built-in NodeJS 'net' module allows for simple RCP connection and data exchange between network devices.\r It operates in an event-driven fashion and thus all incoming data is handled in a single callback.",
-  "main": "SocketHandler.js",
+  "main": "SocketReqRes.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -8,7 +8,6 @@ publish:
     - master
   tags:
     - dind
-  before_script:
-    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
   script:
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
     - npm publish --access=public

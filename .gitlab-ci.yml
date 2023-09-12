@@ -2,11 +2,16 @@ stages:
   - publish
 
 publish:
-  stage: publish
   image: node:16
+  stage: publish
+  only:
+    - master
   tags:
     - dind
-  before_script:
-    - echo "//10.115.1.100:30873/:_authToken=${VERDACCIO_TOKEN}" > ~/.npmrc
   script:
-    - npm publish --registry http://10.115.1.100:30873/
+    # Install dependencies and build app
+    - npm install
+    - npm run build
+    # Auth and publish to NPM
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+    - npm publish --access=public

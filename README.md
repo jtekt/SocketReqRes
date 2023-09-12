@@ -1,6 +1,6 @@
 # SocketReqRes
 
-The built-in NodeJS 'net' module allows for simple RCP connection and data exchange between network devices.
+The built-in NodeJS 'net' module allows for simple TCP connection and data exchange between network devices.
 It operates in an event-driven fashion and thus all incoming data is handled in a single callback.
 
 Oftentimes, devices such as PLCs are designed to respond with data immediately upon receiving a valid message.
@@ -12,7 +12,7 @@ This module attempts to solve this shortfall by adding a promise-based handling 
 ## Usage
 
 ```javascript
-const SocketReqRes = require("./SocketReqRes.js")
+const SocketReqRes = require("@jtekt/socket-req-res")
 
 const device = new SocketReqRes({ host: "192.168.1.2", port: 8080 })
 
